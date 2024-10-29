@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ccinfo</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="bg-dark text-light text-capitalize alert"> choisir une image</h1>
+        <section class="row">
+            <div class="col-md-6">
+                <form action="">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <input type="radio" name="image" id="rd1" value="img/9BOUNOU.jpg" onchange="choix()">
+                            <label for="rd1">image1</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="radio" name="image" id="rd2" value="img/3achraf hakimi.jpg" onchange="choix()">
+                            <label for="rd2">image2</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="radio" name="image" id="rd3" value="img/2achraf dari.jpg" onchange="choix()">
+                            <label for="rd3">image3</label>
+                        </li>
+                        <li class="list-group-item">
+                            <input type="radio" name="image" id="rd4" value="img/romain sass.jpg" onchange="choix()">
+                            <label for="rd4">image4</label>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <img src="" alt="" id="im">
+
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+<script>
+    function choix() {
+        var rd1=document.getElementById('rd1')        
+        var rd2=document.getElementById('rd2')        
+        var rd3=document.getElementById('rd3')        
+        var rd4=document.getElementById('rd4')        
+        var im=document.getElementById('im') 
+        if(rd1.checked)im.src=rd1.value
+        if(rd2.checked)im.src=rd2.value
+        if(rd3.checked)im.src=rd3.value
+        if(rd4.checked)im.src=rd4.value
+    }
+    var i=0
+function auto(){
+    if(i<=4)i++
+    else i=1
+    rd=document.getElementById('rd'+i)
+    im=document.getElementById('im')
+    rd.checked
+    im.src=rd.value
+}
+setInterval(auto,1000)
+</script>
